@@ -1,8 +1,17 @@
 import React from 'react'
+import { Button,Card } from 'react-bootstrap'
 
-function ServiceCard() {
+function ServiceCard({service}) {
   return (
-    <div>ServiceCard</div>
+    <Card bg={service.cardColor} className='h-100 p-3'>
+      <Card.Body>
+        <Card.Title >{service.name}</Card.Title>
+        <Card.Text>
+        {service.description}
+        </Card.Text>
+      </Card.Body>
+      <Button className=''>Posetite servis</Button>
+    </Card>
   )
 }
 
