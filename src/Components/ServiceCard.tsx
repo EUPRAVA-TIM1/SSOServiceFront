@@ -1,7 +1,12 @@
 import React from 'react'
 import { Button,Card } from 'react-bootstrap'
 
-function ServiceCard({service}) {
+function ServiceCard({service,jwt}) {
+
+  const redirect = () =>{
+    window.location.replace(service.url + "/" + jwt)
+  }
+
   return (
     <Card bg={service.cardColor} className='h-100 p-3'>
       <Card.Body>
@@ -10,7 +15,7 @@ function ServiceCard({service}) {
         {service.description}
         </Card.Text>
       </Card.Body>
-      <Button className=''>Posetite servis</Button>
+      <Button className='' onClick={redirect}>Posetite servis</Button>
     </Card>
   )
 }
